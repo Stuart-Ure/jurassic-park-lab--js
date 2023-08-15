@@ -47,7 +47,7 @@ class Park {
     for (const dinosaur of this.dinosaurs) {
         totalVisitors += dinosaur.guestsAttractedPerDay;
     }
-    return `There are ${totalVisitors} per day`
+    return `There are ${totalVisitors} visitors per day`
     }
 
     visitorsPerYear(){
@@ -56,9 +56,19 @@ class Park {
             totalVisitors += dinosaur.guestsAttractedPerDay;
 
     let visitorsPerYear = (totalVisitors * 365)
-    return `There have been ${visitorsPerYear} this year`
+    return `There have been ${visitorsPerYear} visitors this year`
     }
+
+    }
+
+  totalSales() {
+    const visitorsPerYear = this.visitorsPerYear();
+    const ticketPrice = this.ticketPrice; 
+    const totalSales = ticketPrice * visitorsPerYear;
+    return totalSales;
 }
+
+
 
 }
 const jurrasicPark =  new Park("danger island", 100)
@@ -98,6 +108,8 @@ console.log (jurrasicPark.findSpecies("big ol cat"))
 console.log (jurrasicPark.totalVisitors())
 
 console.log(jurrasicPark.visitorsPerYear())
+
+console.log(jurrasicPark.totalSales())
 
 
 
