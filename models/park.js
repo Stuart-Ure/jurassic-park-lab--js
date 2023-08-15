@@ -41,6 +41,25 @@ class Park {
         
     }
 
+    totalVisitors (){
+
+    let totalVisitors = 0;
+    for (const dinosaur of this.dinosaurs) {
+        totalVisitors += dinosaur.guestsAttractedPerDay;
+    }
+    return `There are ${totalVisitors} per day`
+    }
+
+    visitorsPerYear(){
+    let totalVisitors = 0;
+    for (const dinosaur of this.dinosaurs) {
+            totalVisitors += dinosaur.guestsAttractedPerDay;
+
+    let visitorsPerYear = (totalVisitors * 365)
+    return `There have been ${visitorsPerYear} this year`
+    }
+}
+
 }
 const jurrasicPark =  new Park("danger island", 100)
 // console.log (jurrasicPark)
@@ -49,7 +68,7 @@ const catasaur = new Dinosaur ("big ol cat", "carnivore", 900)
 const fishasaur = new Dinosaur ("big ol fish", "watervore", 500)
 const mouseasaur = new Dinosaur ("big ol mouse", "herbivore", 100)
 const tigerasaur = new Dinosaur ("big ol cat", "carnivore", 1000)
-const sharkasaur = new Dinosaur ("big ol fish", "carnivore", 5000)
+const sharkasaur = new Dinosaur ("big ol fish", "wartervore", 5000)
 const ratasaur = new Dinosaur ("big ol mouse", "carnivore", 400)
 const kittenasaur = new Dinosaur ("big ol cat", "carnivore", 600)
 const dogasaur = new Dinosaur ("big ol dog", "carnivore", 1000)
@@ -75,3 +94,11 @@ console.log (jurrasicPark)
 console.log (jurrasicPark.mostViewed())
 
 console.log (jurrasicPark.findSpecies("big ol cat"))
+
+console.log (jurrasicPark.totalVisitors())
+
+console.log(jurrasicPark.visitorsPerYear())
+
+
+
+// Calculate the total revenue from ticket sales for one year
